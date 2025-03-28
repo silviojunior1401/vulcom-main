@@ -12,8 +12,6 @@ import CustomerList from '../pages/customer/CustomerList'
 import UserList from '../pages/user/UserList'
 import UserForm from '../pages/user/UserForm'
 
-import About from '../pages/About'
-
 import Login from '../pages/Login'
 
 export default function AppRoutes() {
@@ -36,8 +34,6 @@ export default function AppRoutes() {
     <Route path="/users" element={ <UserList /> } />
     <Route path="/users/new" element={ <UserForm /> } />
     <Route path="/users/:id" element={ <UserForm /> } />
-
-    {/* 11. Crie uma rota para esse componente. */}
-    <Route path="/about" element={ <About /> } />
+    
   </Routes>
 }

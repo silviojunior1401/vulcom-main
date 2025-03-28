@@ -6,10 +6,9 @@ const prisma = new PrismaClient({
 
 // Exibe no console as instruções SQL enviadas ao BD
 prisma.$on('query', event => {
-  console.log('%'.repeat(60))
+  console.log('-'.repeat(60))
   console.log(event.query)
   if(event.params) console.log('PARAMS:', event.params)
-  console.log('%'.repeat(60))
 })
 
 export default prisma

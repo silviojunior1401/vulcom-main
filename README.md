@@ -26,8 +26,9 @@ npm install
 
 ## Criação do banco de dados
 
-Ainda no terminal, execute
+Ainda no terminal, execute:
 ```
+npx prisma generate
 npx prisma migrate dev --name create-tables
 ```
 
@@ -51,6 +52,39 @@ ALLOWED_ORIGINS="http://localhost:5173,http://127.0.0.1:5173"
 ## Executando o projeto
 
 Estando dentro da pasta `back-end`, execute:
+```
+npm run dev
+```
+
+----
+
+# Configurando o _front-end_
+
+## Instalação das dependências
+
+Abra um segundo terminal no VS Code. Nele, execute os comandos:
+```
+cd front-end
+npm install
+```
+
+### Configuração das variáveis de ambiente
+
+Renomeie o arquivo `.env.local.example` para `.env.local`. Ajuste o conteúdo do arquivo para o seguinte:
+```ini
+# Renomeie este arquivo para .env.local e preencha os valores abaixo
+
+# Preencha com a URL do back-end
+VITE_API_BASE="http://localhost:8080"
+
+# Preencha com o nome do cookie de autenticação
+# (mesmo valor de AUTH_COOKIE_NAME no .env do back-end)
+VITE_AUTH_TOKEN_NAME="_auth"
+```
+
+## Executando o projeto
+
+Estando dentro da pasta `front-end`, execute:
 ```
 npm run dev
 ```
