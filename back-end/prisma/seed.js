@@ -22,7 +22,7 @@ const colors = [
 async function main() {
   // Criar usuários
   const users = [];
-  const numberOfUsers = 5;
+  const numberOfUsers = 4;
 
   // Criação do usuário admin
   const user = await prisma.user.create({
