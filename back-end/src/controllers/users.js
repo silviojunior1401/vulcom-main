@@ -142,7 +142,7 @@ controller.login = async function (req, res) {
         // HTTP 401: Unauthorized
         if (!passwordIsValid) return res.status(401).end();
 
-        // Remove o campo "password" do objeto "user" antes 
+        // Remove o campo "password" do objeto "user" antes
         // de usá-lo no token e na resposta da requisição
         delete user.password;
 
@@ -164,7 +164,7 @@ controller.login = async function (req, res) {
 
         // Retorna o token e o usuário autenticado com
         // HTTP 200: OK (implícito)
-        res.send({ token, user });
+        res.send({ user });
     } catch (error) {
         console.error(error);
 
