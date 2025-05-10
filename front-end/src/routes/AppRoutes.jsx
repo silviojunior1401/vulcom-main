@@ -16,6 +16,8 @@ import UserForm from "../pages/user/UserForm";
 
 import Login from "../pages/Login";
 
+import BruteForce from "../pages/BruteForce";
+
 export default function AppRoutes() {
     return (
         <Routes>
@@ -58,6 +60,15 @@ export default function AppRoutes() {
             />
 
             <Route
+                path="/bruteforce"
+                element={
+                    <AuthGuard>
+                        <BruteForce />
+                    </AuthGuard>
+                }
+            />
+
+            <Route
                 path="/customers/new"
                 element={
                     <AuthGuard>
@@ -95,6 +106,15 @@ export default function AppRoutes() {
                 element={
                     <AuthGuard adminOnly={true}>
                         <UserForm />
+                    </AuthGuard>
+                }
+            />
+
+            <Route
+                path="/brute-force"
+                element={
+                    <AuthGuard adminOnly={true}>
+                        <BruteForce />
                     </AuthGuard>
                 }
             />
